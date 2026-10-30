@@ -15,3 +15,12 @@ export type Night = { rows: DigestRow[]; badLines: number };
 
 // null = no file for that night.
 export type ReadNight = (runsDir: string, night: string) => Night | null;
+
+// One parsed line of runs/<night>.jsonl.
+export type RunLine = {
+  at: string;
+  job: string;
+  status: RunStatus;
+  owner: string | null;
+  error: string | null;
+};
